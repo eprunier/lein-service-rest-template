@@ -12,6 +12,9 @@
   false)
 
 (defn current-user
-  "Get current user."
-  [request]
-  {:user {:username "foo"}})
+  "Get current user.
+   If username is provided, checks if this username refers to the current user."
+  ([request]
+     {:user {:username "foo"}})
+  ([request username]
+     true))

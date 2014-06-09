@@ -6,7 +6,7 @@
 
 (defresource user
   [request]
-  :allowed-methods [:get :put]
+  :allowed-methods [:get :post :put]
   :available-media-types ["application/json"]
   :authorized? #(authenticated? (:request %))
   :allowed? (fn [context]
@@ -16,12 +16,25 @@
                   (admin? request)
                   true)))
   :handle-ok #(clj->json (current-user (:request %)))
-  :put! (fn [_] (println "New user")))
+  :post! (fn [_] (println "Current user updated"))
+  :put! (fn [_] (println "User created")))
 
 (defresource user-by-username
+  :allowed-methods [:get :post :delete]
   :available-media-types ["application/json"]
   :authorized? #(authenticated? (:request %))
-  :handle-ok #(clj->json {:user {:username (get-in % [:request :params :username])}}))
+  :allowed? (fn [context]
+              (let [request (:request context)
+                    method (:request-method request)]
+                (condp = method
+                  :get true
+                  :delete (admin? request)
+                  :post (or (admin? request)
+                            (current-user (get-in context [:request :params :username])
+                                          request)))))
+  :handle-ok #(clj->json {:user {:username (get-in % [:request :params :username])}})
+  :post! (fn [_] (println "User updated"))
+  :delete! (fn [_] (println "User deleted")))
 
 (defroutes user-routes
   (ANY "/user" request (user request))
