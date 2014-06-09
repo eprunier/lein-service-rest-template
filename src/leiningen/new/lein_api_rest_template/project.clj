@@ -6,6 +6,7 @@
   :dependencies [[org.clojure/clojure "1.6.0"]
                  [ring "1.2.2"]
                  [compojure "1.1.8"]
+                 [liberator "0.11.0"]
                  [cheshire "5.3.1"]]
   :profiles {:dev {:dependencies [[org.clojure/tools.namespace "0.2.4"]]
                    :source-paths ["dev"]}}
