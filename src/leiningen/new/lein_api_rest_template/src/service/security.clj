@@ -9,7 +9,7 @@
 (defn admin?
   "Sample admin authorization function."
   [request]
-  false)
+  true)
 
 (defn current-user
   "Get current user.
