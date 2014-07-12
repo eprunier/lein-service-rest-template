@@ -1,4 +1,4 @@
-(defproject lein-service-rest-template/lein-template "1.0.0"
+(defproject lein-service-rest-template/lein-template "1.0.0-SNAPSHOT"
   :description "A Leiningen template for REST services based on Liberator"
   :url "https://github.com/eprunier/lein-api-rest-template"
   :license {:name "Eclipse Public License"
