@@ -1,6 +1,6 @@
 # lein-webapp-template
 
-A Leiningen template for REST API based on Liberator.
+A Leiningen template for REST services.
 
 ## Usage with Leiningen 2
 
