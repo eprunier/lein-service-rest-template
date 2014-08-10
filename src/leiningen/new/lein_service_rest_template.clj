@@ -39,7 +39,5 @@
              ["src/{{sanitized}}/app.clj" (render "src/app.clj" data)]
              ["src/{{sanitized}}/service/db.clj" (render "src/service/db.clj" data)]
              ["src/{{sanitized}}/service/security.clj" (render "src/service/security.clj" data)]
-             ["src/{{sanitized}}/service/json.clj" (render "src/service/json.clj" data)]
-             ["src/{{sanitized}}/api/user.clj" (render "src/api/user.clj" data)]
-             )
+             ["src/{{sanitized}}/api/user.clj" (render "src/api/user.clj" data)])
     (println "Project" name "successfully generated")))

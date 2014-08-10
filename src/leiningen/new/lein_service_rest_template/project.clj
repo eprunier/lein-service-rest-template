@@ -7,7 +7,7 @@
                  [ring "1.2.2"]
                  [compojure "1.1.8"]
                  [liberator "0.11.0"]
-                 [cheshire "5.3.1"]]
+                 [io.clojure/liberator-transit "0.2.0"]]
   :profiles {:dev {:dependencies [[org.clojure/tools.namespace "0.2.4"]]
                    :source-paths ["dev"]}}
   :plugins [[lein-ring "0.8.10"]]

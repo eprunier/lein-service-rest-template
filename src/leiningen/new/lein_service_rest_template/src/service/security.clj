@@ -1,5 +1,4 @@
-(ns {{name}}.service.security
-  (:require [{{name}}.service.json :refer [clj->json]]))
+(ns {{name}}.service.security)
 
 (defn authenticated?
   "Sample authentication function."
